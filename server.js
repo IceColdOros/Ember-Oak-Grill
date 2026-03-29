@@ -27,7 +27,7 @@ app.use('/api/menu', menuRoutes);                 // e.g. GET  /api/menu
 // ── CATCH-ALL ROUTE ──────────────────────────────────────────
 // for any route not matched above, serve index.html
 // this means navigating to /menu still loads the app
-app.get('*', (req, res) => {
+app.get('/{*any}', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
