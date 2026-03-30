@@ -1,22 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-        <title>Ember Oak Grill</title>
-    
-        <link rel="stylesheet" href="/assets/vendor.css" />
-        <link rel="stylesheet" href="/assets/ember-oak-grill.css" />
-    </head>
-    
-    <body>
-        <div id="ember-app"></div>
-    
-        <script src="/assets/vendor.js"></script>
-        <script src="/assets/ember-oak-grill.js"></script>
-    
-        <p>Hello Everybody</p>
-    
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ember & Oak Grill | Where Family Meets Flame</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-ember">Ember</span>
+        <span class="logo-amp">&</span>
+        <span class="logo-oak">Oak Grill</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="reservation.html" class="nav-link">Reservations</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="reservation.html" class="nav-cta-btn">Book a Table</a></li>
+      </ul>
+
+      <!-- Hamburger menu for mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO CAROUSEL ──────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="carousel" id="carousel">
+
+      <!-- Slide 1 -->
+      <div class="carousel-slide active" style="background-image: url('images/slide1.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Welcome to Ember &amp; Oak</p>
+          <h1 class="slide-title">Where Family<br><em>Meets Flame</em></h1>
+          <p class="slide-subtitle">Fresh burgers, great vibes, unforgettable meals</p>
+          <div class="slide-actions">
+            <a href="menu.html" class="btn btn-primary">View Our Menu</a>
+            <a href="reservation.html" class="btn btn-outline">Book a Table</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide" style="background-image: url('images/slide2.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Every Friday</p>
+          <h1 class="slide-title">Happy Hour<br><em>50% Off Starters</em></h1>
+          <p class="slide-subtitle">Join us from 4pm to 6pm for our famous happy hour deals</p>
+          <div class="slide-actions">
+            <a href="reservation.html" class="btn btn-primary">Reserve Your Spot</a>
+            <a href="menu.html" class="btn btn-outline">See Starters</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide" style="background-image: url('images/slide3.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <p class="slide-eyebrow">New on the Menu</p>
+          <h1 class="slide-title">The Double Stack<br><em>Has Arrived</em></h1>
+          <p class="slide-subtitle">Two beef patties, bacon, cheddar and caramelised onion</p>
+          <div class="slide-actions">
+            <a href="menu.html" class="btn btn-primary">See What's New</a>
+            <a href="reservation.html" class="btn btn-outline">Book a Table</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous slide">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Carousel Dots -->
+    <div class="carousel-dots" id="carouselDots">
+      <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="dot" data-index="2" aria-label="Slide 3"></button>
+    </div>
+
+  </section>
+
+  <!-- ── PROMO BANNER ───────────────────────────────────────── -->
+  <div class="promo-banner">
+    <div class="promo-container">
+      <i class="fa-solid fa-fire promo-icon"></i>
+      <p><strong>Happy Hour Every Friday</strong> — 50% off all starters from 4pm to 6pm at all branches!</p>
+      <a href="reservation.html" class="promo-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- ── FEATURED DISHES ────────────────────────────────────── -->
+  <section class="featured-section" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">From Our Kitchen</p>
+        <h2 class="section-title">Most Popular Dishes</h2>
+        <p class="section-subtitle">Our guests keep coming back for these crowd favourites</p>
+      </div>
+
+      <!-- Featured dishes loaded dynamically from API -->
+      <div class="dishes-grid" id="featuredDishes">
+        <!-- JS will inject cards here -->
+        <div class="loading-spinner">
+          <i class="fa-solid fa-fire fa-spin"></i>
+          <p>Loading dishes...</p>
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY CHOOSE US ──────────────────────────────────────── -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <h3>Flame Grilled</h3>
+          <p>Every burger and grill item cooked over real flame for that authentic smoky flavour.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Fresh Ingredients</h3>
+          <p>We source locally where possible. Fresh produce, quality meat, real flavour.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
+          <h3>Family Friendly</h3>
+          <p>A welcoming space for everyone — kids menu, high chairs, and a great atmosphere.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Open Daily</h3>
+          <p>Both branches open 7 days a week from 10am. Walk in or book your table online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Guest Reviews</p>
+        <h2 class="section-title">What Our Guests Say</h2>
+      </div>
+
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- JS will inject testimonials here -->
+        <div class="loading-spinner">
+          <i class="fa-solid fa-fire fa-spin"></i>
+          <p>Loading reviews...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ─────────────────────────────────────────── -->
+  <section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container cta-content">
+      <h2>Ready for an Unforgettable Meal?</h2>
+      <p>Book your table at Ember &amp; Oak Grill and let us take care of the rest.</p>
+      <a href="reservation.html" class="btn btn-primary btn-large">Reserve a Table</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="logo-ember">Ember</span>
+          <span class="logo-amp">&</span>
+          <span class="logo-oak">Oak Grill</span>
+        </a>
+        <p class="footer-tagline">Where Family Meets Flame</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="reservation.html">Reservations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fa-solid fa-location-dot"></i> 12 Maude Street, Sandton</p>
+        <p><i class="fa-solid fa-phone"></i> 011 234 5678</p>
+        <p><i class="fa-solid fa-envelope"></i> info@emberandoak.co.za</p>
+        <p><i class="fa-solid fa-clock"></i> Mon–Sun: 11:00 – 22:00</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ember &amp; Oak Grill. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+
+</body>
 </html>
