@@ -1,0 +1,290 @@
+/* ── FILTER BAR ───────────────────────────────────────────── */
+.menu-section {
+  padding: var(--space-xl) 0 var(--space-xxl);
+  background: var(--color-light);
+  min-height: 60vh;
+}
+
+.filter-bar {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 100;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--color-mid);
+  background: var(--color-light);
+  border: 2px solid transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  color: var(--color-primary);
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.filter-count {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--color-mid);
+  white-space: nowrap;
+}
+
+/* ── MENU CONTENT ─────────────────────────────────────────── */
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+}
+
+/* ── MENU CATEGORY BLOCK ──────────────────────────────────── */
+.menu-category-block {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.category-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.category-count {
+  font-size: 0.85rem;
+  color: var(--color-mid);
+  margin-left: auto;
+}
+
+/* ── MENU ITEMS GRID ──────────────────────────────────────── */
+.menu-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* ── MENU ITEM CARD ───────────────────────────────────────── */
+.menu-item-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.menu-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Unavailable state */
+.menu-item-card.unavailable {
+  opacity: 0.55;
+  filter: grayscale(40%);
+}
+
+.menu-item-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: var(--color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light-mid);
+  font-size: 3.5rem;
+  flex-shrink: 0;
+}
+
+.menu-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-item-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-item-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.menu-item-desc {
+  font-size: 0.875rem;
+  color: var(--color-mid);
+  line-height: 1.55;
+  margin-bottom: var(--space-sm);
+  flex: 1;
+}
+
+.menu-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: var(--space-sm);
+}
+
+.menu-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-light);
+  margin-top: auto;
+}
+
+.menu-item-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+}
+
+.unavailable-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-mid);
+  background: var(--color-light);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ── NO RESULTS ───────────────────────────────────────────── */
+.no-results {
+  text-align: center;
+  padding: var(--space-xxl) 0;
+  color: var(--color-mid);
+}
+
+.no-results i {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  display: block;
+  color: var(--color-light-mid);
+}
+
+.no-results p {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+}
+
+/* ── CATEGORY ICONS MAP ───────────────────────────────────── */
+/* These are used by JS to pick the right icon per category */
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .filter-bar {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .filter-count {
+    margin-left: 0;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-buttons {
+    width: 100%;
+  }
+
+  .filter-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 0.45rem 0.75rem;
+  }
+}

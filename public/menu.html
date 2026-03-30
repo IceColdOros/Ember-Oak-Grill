@@ -1,1 +1,149 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu | Ember & Oak Grill</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-ember">Ember</span>
+        <span class="logo-amp">&</span>
+        <span class="logo-oak">Oak Grill</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link active">Menu</a></li>
+        <li><a href="reservation.html" class="nav-link">Reservations</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="reservation.html" class="nav-cta-btn">Book a Table</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <header class="page-header">
+    <div class="container">
+      <p class="section-eyebrow">Ember &amp; Oak Grill</p>
+      <h1>Our Menu</h1>
+      <p>Everything grilled with love and served with flavour</p>
+    </div>
+  </header>
+
+  <!-- ── MENU SECTION ───────────────────────────────────────── -->
+  <section class="menu-section">
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar" id="filterBar">
+        <p class="filter-label">Filter by:</p>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fa-solid fa-border-all"></i> All
+          </button>
+          <button class="filter-btn" data-filter="Vegetarian">
+            <i class="fa-solid fa-leaf"></i> Vegetarian
+          </button>
+          <button class="filter-btn" data-filter="Gluten-Free">
+            <i class="fa-solid fa-wheat-awn-circle-exclamation"></i> Gluten-Free
+          </button>
+          <button class="filter-btn" data-filter="Spicy">
+            <i class="fa-solid fa-pepper-hot"></i> Spicy
+          </button>
+        </div>
+
+        <!-- Results count -->
+        <p class="filter-count" id="filterCount"></p>
+      </div>
+
+      <!-- Menu Content — categories and items injected by JS -->
+      <div class="menu-content" id="menuContent">
+        <div class="loading-spinner">
+          <i class="fa-solid fa-fire fa-spin"></i>
+          <p>Loading menu...</p>
+        </div>
+      </div>
+
+      <!-- No results message (hidden by default) -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p>No dishes found for this filter.</p>
+        <button class="btn btn-primary" id="clearFilter">Show All Dishes</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ─────────────────────────────────────────── -->
+  <section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container cta-content">
+      <h2>Ready to Order?</h2>
+      <p>Book your table and we will have it ready for you.</p>
+      <a href="reservation.html" class="btn btn-primary btn-large">Reserve a Table</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="logo-ember">Ember</span>
+          <span class="logo-amp">&</span>
+          <span class="logo-oak">Oak Grill</span>
+        </a>
+        <p class="footer-tagline">Where Family Meets Flame</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="reservation.html">Reservations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fa-solid fa-location-dot"></i> 12 Maude Street, Sandton</p>
+        <p><i class="fa-solid fa-phone"></i> 011 234 5678</p>
+        <p><i class="fa-solid fa-envelope"></i> info@emberandoak.co.za</p>
+        <p><i class="fa-solid fa-clock"></i> Mon–Sun: 11:00 – 22:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ember &amp; Oak Grill. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+
+</body>
+</html>
