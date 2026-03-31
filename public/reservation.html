@@ -1,1 +1,326 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservations | Ember & Oak Grill</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/reservation.css" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-ember">Ember</span>
+        <span class="logo-amp">&</span>
+        <span class="logo-oak">Oak Grill</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="reservation.html" class="nav-link active">Reservations</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="reservation.html" class="nav-cta-btn">Book a Table</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <header class="page-header">
+    <div class="container">
+      <p class="section-eyebrow">Ember &amp; Oak Grill</p>
+      <h1>Book a Table</h1>
+      <p>Reserve your spot and let us take care of the rest</p>
+    </div>
+  </header>
+
+  <!-- ── RESERVATION SECTION ────────────────────────────────── -->
+  <section class="reservation-section">
+    <div class="container">
+      <div class="reservation-layout">
+
+        <!-- LEFT: Info Panel -->
+        <aside class="reservation-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3>Opening Hours</h3>
+            <p>Monday – Sunday</p>
+            <p class="info-highlight">11:00 – 22:00</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Our Branches</h3>
+            <p><strong>Sandton</strong><br>12 Maude Street</p>
+            <p><strong>Rosebank</strong><br>7 Bath Avenue</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p>Sandton: <a href="tel:0112345678">011 234 5678</a></p>
+            <p>Rosebank: <a href="tel:0119876543">011 987 6543</a></p>
+          </div>
+
+          <div class="info-note">
+            <i class="fa-solid fa-circle-info"></i>
+            <p>For groups larger than 10, please call us directly to make arrangements.</p>
+          </div>
+        </aside>
+
+        <!-- RIGHT: Reservation Form -->
+        <div class="reservation-form-wrapper">
+          <div class="form-card">
+            <h2 class="form-card-title">Make a Reservation</h2>
+            <p class="form-card-subtitle">Fields marked with <span class="required">*</span> are required</p>
+
+            <form id="reservationForm" novalidate>
+
+              <!-- Full Name -->
+              <div class="form-group">
+                <label class="form-label" for="guestName">
+                  Full Name <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="guestName"
+                  name="guestName"
+                  class="form-input"
+                  placeholder="e.g. Jane Smith"
+                  autocomplete="name"
+                />
+                <span class="form-error" id="guestNameError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please enter your full name
+                </span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label class="form-label" for="email">
+                  Email Address <span class="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="e.g. jane@email.com"
+                  autocomplete="email"
+                />
+                <span class="form-error" id="emailError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please enter a valid email address
+                </span>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label class="form-label" for="phone">
+                  Phone Number <span class="required">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="e.g. 083 123 4567"
+                  autocomplete="tel"
+                />
+                <span class="form-error" id="phoneError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please enter a valid phone number
+                </span>
+              </div>
+
+              <!-- Date and Time -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="date">
+                    Date <span class="required">*</span>
+                  </label>
+                  <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    class="form-input"
+                  />
+                  <span class="form-error" id="dateError">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Please select a future date
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="time">
+                    Time <span class="required">*</span>
+                  </label>
+                  <select id="time" name="time" class="form-select">
+                    <option value="">Select a time</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                    <option value="21:30">21:30</option>
+                  </select>
+                  <span class="form-error" id="timeError">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Please select a time
+                  </span>
+                </div>
+              </div>
+
+              <!-- Party Size -->
+              <div class="form-group">
+                <label class="form-label" for="partySize">
+                  Number of Guests <span class="required">*</span>
+                </label>
+                <select id="partySize" name="partySize" class="form-select">
+                  <option value="">Select party size</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="7">7 Guests</option>
+                  <option value="8">8 Guests</option>
+                  <option value="9">9 Guests</option>
+                  <option value="10">10 Guests</option>
+                </select>
+                <span class="form-error" id="partySizeError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please select the number of guests
+                </span>
+              </div>
+
+              <!-- Special Requests -->
+              <div class="form-group">
+                <label class="form-label" for="specialRequests">
+                  Special Requests <span class="optional">(optional)</span>
+                </label>
+                <textarea
+                  id="specialRequests"
+                  name="specialRequests"
+                  class="form-textarea"
+                  placeholder="e.g. wheelchair access, high chair needed, birthday celebration..."
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                <i class="fa-solid fa-calendar-check"></i>
+                Confirm Reservation
+              </button>
+
+              <!-- Submitting state -->
+              <div class="submitting-state" id="submittingState" style="display:none;">
+                <i class="fa-solid fa-fire fa-spin"></i>
+                <span>Confirming your reservation...</span>
+              </div>
+
+            </form>
+
+            <!-- Success Message (hidden until form submitted) -->
+            <div class="success-panel" id="successPanel" style="display:none;">
+              <div class="success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <h3>Reservation Confirmed!</h3>
+              <p id="successMessage">Your table has been reserved.</p>
+              <div class="success-details" id="successDetails"></div>
+              <button class="btn btn-primary" id="newReservationBtn">
+                Make Another Reservation
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="logo-ember">Ember</span>
+          <span class="logo-amp">&</span>
+          <span class="logo-oak">Oak Grill</span>
+        </a>
+        <p class="footer-tagline">Where Family Meets Flame</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="reservation.html">Reservations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fa-solid fa-location-dot"></i> 12 Maude Street, Sandton</p>
+        <p><i class="fa-solid fa-phone"></i> 011 234 5678</p>
+        <p><i class="fa-solid fa-envelope"></i> info@emberandoak.co.za</p>
+        <p><i class="fa-solid fa-clock"></i> Mon–Sun: 11:00 – 22:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ember &amp; Oak Grill. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/reservation.js"></script>
+
+</body>
+</html>
