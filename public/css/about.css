@@ -1,0 +1,377 @@
+/* ============================================================
+   about.css — About Us Page Styles
+   ============================================================ */
+
+/* ── STORY SECTION ────────────────────────────────────────── */
+.story-section {
+  padding: var(--space-xxl) 0;
+  background: var(--color-white);
+}
+
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-xxl);
+  align-items: center;
+}
+
+/* Image placeholder (used when no real image is available) */
+.story-image-wrap {
+  position: relative;
+}
+
+.story-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light));
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  color: rgba(255,255,255,0.3);
+}
+
+.story-image-placeholder i {
+  font-size: 5rem;
+}
+
+.story-image-placeholder span {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+}
+
+/* Floating badge on the image */
+.story-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  min-width: 120px;
+}
+
+.story-badge i {
+  font-size: 1.8rem;
+}
+
+.story-badge span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Story text */
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.story-text p {
+  font-size: 1rem;
+  color: var(--color-mid);
+  line-height: 1.8;
+}
+
+.story-text strong {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+/* Stats row */
+.story-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-light-mid);
+  border-bottom: 1px solid var(--color-light-mid);
+  margin-top: var(--space-sm);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── VALUES SECTION ───────────────────────────────────────── */
+.values-section {
+  padding: var(--space-xxl) 0;
+  background: var(--color-light);
+}
+
+.mission-banner {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-xxl);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-quote-icon {
+  font-size: 5rem;
+  color: rgba(255,255,255,0.1);
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-lg);
+  line-height: 1;
+}
+
+.mission-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--color-white);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+}
+
+.value-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border-bottom: 3px solid transparent;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-bottom-color: var(--color-primary);
+}
+
+.value-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+.value-card:hover .value-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.value-card p {
+  font-size: 0.875rem;
+  color: var(--color-mid);
+  line-height: 1.6;
+}
+
+/* ── TEAM SECTION ─────────────────────────────────────────── */
+.team-section {
+  padding: var(--space-xxl) 0;
+  background: var(--color-white);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+
+.team-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card-photo {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, var(--color-dark-mid), var(--color-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.2);
+  font-size: 4rem;
+  overflow: hidden;
+}
+
+.team-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card-body {
+  padding: var(--space-md);
+}
+
+.team-card-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 4px;
+}
+
+.team-card-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.team-card-bio {
+  font-size: 0.875rem;
+  color: var(--color-mid);
+  line-height: 1.6;
+}
+
+/* ── AWARDS SECTION ───────────────────────────────────────── */
+.awards-section {
+  padding: var(--space-xxl) 0;
+  background: var(--color-dark);
+}
+
+.awards-section .section-eyebrow {
+  color: var(--color-accent);
+}
+
+.awards-section .section-title {
+  color: var(--color-white);
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.award-card {
+  text-align: center;
+  padding: var(--space-lg);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.award-card:hover {
+  border-color: var(--color-accent);
+  background: rgba(245,158,11,0.05);
+  transform: translateY(-4px);
+}
+
+.award-card i {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.award-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-xs);
+}
+
+.award-card p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .story-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .story-image-wrap {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .story-badge {
+    bottom: -15px;
+    right: -10px;
+  }
+
+  .story-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mission-banner {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .story-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .awards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
