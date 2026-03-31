@@ -26,4 +26,22 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET menu items filtered by dietary tag
+router.get('/filter/:tag', async (req, res) => {
+  try {
+    const tag = `%${req.params.tag}%`;
+    const [rows] = await db.query(`
+      SELECT mi.*, mc.name AS category
+      FROM menu_item mi
+      JOIN menu_category mc ON mi.categoryId = mc.categoryId
+      WHERE mi.dietaryTags LIKE ?
+      ORDER BY mc.displayOrder, mi.name
+    `, [tag]);
+    res.json(rows);
+  } catch (err) {
+    console.error('Error filtering menu:', err.message);
+    res.status(500).json({ error: 'Failed to filter menu' });
+  }
+});
+
 module.exports = router;
