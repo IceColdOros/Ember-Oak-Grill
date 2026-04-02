@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // build image or icon placeholder
     const imgHTML = item.imagePath
-      ? `<img src="${item.imagePath}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='<i class=\\'fa-solid fa-burger\\'></i>'">`
+      ? `<img src="${item.imagePath}" alt="${item.name}" loading="lazy" onerror="this.src='images/placeholder.jpg'">`
       : `<i class="fa-solid fa-burger"></i>`;
 
     card.innerHTML = `
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // avatar image or icon fallback
         const avatarHTML = t.avatarPath
-          ? `<img src="${t.avatarPath}" alt="${t.guestName}" onerror="this.parentElement.innerHTML='<i class=\\'fa-solid fa-user\\'></i>'">`
+          ? `<img src="${t.avatarPath}" alt="${t.guestName}" onerror="this.src='images/placeholder.jpg'">`
           : `<i class="fa-solid fa-user"></i>`;
 
         card.innerHTML = `

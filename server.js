@@ -21,12 +21,14 @@ const contactRoutes = require('./routes/contact');
 const menuRoutes = require('./routes/menu');
 const testimonialRoutes = require('./routes/testimonials');
 const teamRoutes = require('./routes/team');
+const branchRoutes = require('./routes/branches');
 
 app.use('/api/reservations', reservationRoutes);  // e.g. POST /api/reservations
 app.use('/api/contact', contactRoutes);           // e.g. POST /api/contact
 app.use('/api/menu', menuRoutes);                 // e.g. GET  /api/menu
 app.use('/api/testimonials', testimonialRoutes);  // e.g. GET  /api/testimonials
 app.use('/api/team', teamRoutes);                 // e.g. GET  /api/team
+app.use('/api/branches', branchRoutes);           // e.g. GET  /api/branches
 
 // ── CATCH-ALL ROUTE ──────────────────────────────────────────
 // for any route not matched above, serve index.html

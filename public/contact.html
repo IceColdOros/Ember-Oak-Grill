@@ -1,1 +1,314 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Locations | Ember & Oak Grill</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-ember">Ember</span>
+        <span class="logo-amp">&</span>
+        <span class="logo-oak">Oak Grill</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="reservation.html" class="nav-link">Reservations</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="reservation.html" class="nav-cta-btn">Book a Table</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <header class="page-header">
+    <div class="container">
+      <p class="section-eyebrow">Get in Touch</p>
+      <h1>Contact &amp; Locations</h1>
+      <p>We would love to hear from you</p>
+    </div>
+  </header>
+
+  <!-- ── LOCATIONS SECTION ──────────────────────────────────── -->
+  <section class="locations-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Our Branches</h2>
+        <p class="section-subtitle">Visit us at either of our two Johannesburg locations</p>
+      </div>
+
+      <!-- Branch cards loaded from API -->
+      <div class="branches-grid" id="branchesGrid">
+        <div class="loading-spinner">
+          <i class="fa-solid fa-fire fa-spin"></i>
+          <p>Loading locations...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MAP SECTION ────────────────────────────────────────── -->
+  <section class="map-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Sandton Branch</p>
+        <h2 class="section-title">Find Us on the Map</h2>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.6!2d28.0567!3d-26.1076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573!2sSandton!5e0!3m2!1sen!2sza!4v1"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ember and Oak Grill Sandton Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT FORM + INFO ────────────────────────────────── -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- LEFT: Contact Info -->
+        <div class="contact-info">
+          <div class="section-header" style="text-align:left;">
+            <p class="section-eyebrow">Say Hello</p>
+            <h2 class="section-title">Send Us a Message</h2>
+            <p class="section-subtitle" style="margin:0;">
+              Have a question, complaint or compliment? Fill in the form and we will get back to you within 24 hours.
+            </p>
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email Us</h4>
+                <p>info@emberandoak.co.za</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4>Call Us</h4>
+                <p>Sandton: 011 234 5678</p>
+                <p>Rosebank: 011 987 6543</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>Monday – Sunday</p>
+                <p><strong>11:00 – 22:00</strong></p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div>
+                <h4>Follow Us</h4>
+                <div class="contact-socials">
+                  <a href="#" target="_blank" class="social-pill">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                  </a>
+                  <a href="#" target="_blank" class="social-pill">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                  </a>
+                  <a href="#" target="_blank" class="social-pill">
+                    <i class="fa-brands fa-x-twitter"></i> Twitter
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact Form -->
+        <div class="contact-form-wrapper">
+          <div class="form-card">
+
+            <form id="contactForm" novalidate>
+
+              <!-- Name -->
+              <div class="form-group">
+                <label class="form-label" for="contactName">
+                  Full Name <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contactName"
+                  name="contactName"
+                  class="form-input"
+                  placeholder="e.g. Jane Smith"
+                />
+                <span class="form-error" id="contactNameError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please enter your name
+                </span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">
+                  Email Address <span class="required">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="contactEmail"
+                  name="contactEmail"
+                  class="form-input"
+                  placeholder="e.g. jane@email.com"
+                />
+                <span class="form-error" id="contactEmailError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please enter a valid email address
+                </span>
+              </div>
+
+              <!-- Subject -->
+              <div class="form-group">
+                <label class="form-label" for="contactSubject">
+                  Subject <span class="required">*</span>
+                </label>
+                <select id="contactSubject" name="contactSubject" class="form-select">
+                  <option value="">Select a subject</option>
+                  <option value="General Enquiry">General Enquiry</option>
+                  <option value="Reservation Query">Reservation Query</option>
+                  <option value="Feedback - Positive">Feedback - Positive</option>
+                  <option value="Feedback - Complaint">Feedback - Complaint</option>
+                  <option value="Private Event">Private Event / Function Enquiry</option>
+                  <option value="Media Enquiry">Media Enquiry</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="form-error" id="contactSubjectError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please select a subject
+                </span>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label class="form-label" for="contactMessage">
+                  Message <span class="required">*</span>
+                </label>
+                <textarea
+                  id="contactMessage"
+                  name="contactMessage"
+                  class="form-textarea"
+                  placeholder="Write your message here..."
+                  rows="5"
+                ></textarea>
+                <span class="form-error" id="contactMessageError">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Please enter a message (at least 10 characters)
+                </span>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+              </button>
+
+              <!-- Submitting state -->
+              <div class="submitting-state" id="contactSubmitting" style="display:none;">
+                <i class="fa-solid fa-fire fa-spin"></i>
+                <span>Sending your message...</span>
+              </div>
+
+              <!-- Success message -->
+              <div class="form-success" id="contactSuccess">
+                <i class="fa-solid fa-circle-check" style="font-size:1.5rem; color:#22C55E; display:block; margin-bottom:0.5rem;"></i>
+                <strong>Message sent successfully!</strong><br>
+                Thank you for reaching out. We will get back to you within 24 hours.
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="logo-ember">Ember</span>
+          <span class="logo-amp">&</span>
+          <span class="logo-oak">Oak Grill</span>
+        </a>
+        <p class="footer-tagline">Where Family Meets Flame</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="reservation.html">Reservations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fa-solid fa-location-dot"></i> 12 Maude Street, Sandton</p>
+        <p><i class="fa-solid fa-phone"></i> 011 234 5678</p>
+        <p><i class="fa-solid fa-envelope"></i> info@emberandoak.co.za</p>
+        <p><i class="fa-solid fa-clock"></i> Mon–Sun: 11:00 – 22:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ember &amp; Oak Grill. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+
+</body>
+</html>

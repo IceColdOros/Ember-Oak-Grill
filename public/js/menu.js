@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Build image or icon placeholder
     const imgHTML = item.imagePath
       ? `<img src="${item.imagePath}" alt="${item.name}" loading="lazy"
-             onerror="this.parentElement.innerHTML='<i class=\\'fa-solid fa-burger\\'></i>'">`
+             onerror="this.src='images/placeholder.jpg'">`
       : `<i class="fa-solid fa-burger"></i>`;
 
     // Build dietary tag badges

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Photo or icon placeholder
     const photoHTML = member.photoPath
       ? `<img src="${member.photoPath}" alt="${member.name}"
-             onerror="this.parentElement.innerHTML='<i class=\\'fa-solid fa-user-tie\\'></i>'">`
+             onerror="this.src='images/placeholder.jpg'">`
       : `<i class="fa-solid fa-user-tie"></i>`;
 
     card.innerHTML = `
