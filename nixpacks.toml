@@ -5,4 +5,4 @@ nixPkgs = ["nodejs"]
 cmds = ["npm ci"]
 
 [start]
-cmd = "npm run dev"
+cmd = "npm start"
